@@ -2,6 +2,10 @@ const chatContainer = document.getElementById('chat-container');
 const userInput = document.getElementById('user-input');
 const ticketBox = document.getElementById('ticket-box');
 
+// Backend URL: Local testing ke liye localhost, live deployment ke baad Render URL yahan daalein
+const BACKEND_URL = 'http://localhost:5000';
+// Example for Live: const BACKEND_URL = 'https://novashop-backend.onrender.com';
+
 // Local array to maintain full chat transcript for agent review
 let chatHistoryLog = [];
 
@@ -44,7 +48,7 @@ async function sendMessage() {
     userInput.value = '';
 
     try {
-        const response = await fetch('http://localhost:5000/api/chat', {
+        const response = await fetch(`${BACKEND_URL}/api/chat`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ message: text })
@@ -72,7 +76,7 @@ async function submitTicket() {
     }
 
     try {
-        const response = await fetch('http://localhost:5000/api/tickets', {
+        const response = await fetch(`${BACKEND_URL}/api/tickets`, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ 
