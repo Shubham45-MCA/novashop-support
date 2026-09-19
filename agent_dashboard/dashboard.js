@@ -1,5 +1,8 @@
 const ticketsList = document.getElementById('tickets-list');
+
+// Backend URL: Local testing ke liye localhost, live deployment ke baad Render URL yahan daalein
 const BACKEND_URL = 'http://localhost:5000';
+// Example for Live: const BACKEND_URL = 'https://novashop-backend.onrender.com';
 
 async function fetchTickets() {
     try {
