@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NovaShop - Professional Agent Workspace</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen p-6">
+
+    <header class="max-w-6xl mx-auto flex justify-between items-center mb-8 border-b border-slate-800 pb-4">
+        <div>
+            <h1 class="text-2xl font-bold tracking-wide text-indigo-400">Agent Workspace & Ticket Management</h1>
+            <p class="text-xs text-slate-400">Review AI chat transcripts, manage customer escalations, and execute resolutions.</p>
+        </div>
+        <button onclick="fetchTickets()" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs px-4 py-2 rounded-lg transition shadow">Refresh Tickets</button>
+    </header>
+
+    <main class="max-w-6xl mx-auto space-y-4" id="tickets-list">
+        <div class="bg-slate-900 border border-slate-800 p-6 rounded-xl text-center text-sm text-slate-500">
+            Loading active support tickets...
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
